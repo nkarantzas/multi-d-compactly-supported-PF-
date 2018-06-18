@@ -1,4 +1,4 @@
-function Bmat = fminNEW(a,B1)
+function Bmat = funmin(a,B1)
 %% This function takes in an s-dimensional low-pass filter matrix 
 % and #L pre-designed high-pass filters and returns a collection 
 % of high-pass filter coefficients defining a Parseval Framelet 
@@ -25,8 +25,10 @@ LB = zeros(1,nvars); %specified lower bound
 UB = ones(1,nvars); %specified upper bound
 x0 = ones(1,nvars); %you may have to play around with the init - value
 %x0 = (1/norm(Q(2:end,:),'fro'))*ones(1,nvars);
+% setting your preferred parameters for optimization
 options = optimset('Largescale','on',...%'Display','iter',...
     'MaxIter',1000,'MaxFunEvals',5000,'TolX',1e-11,'TolFun',1e-11);
+% not closing out unless you find a loc minimum
 while max(svd(diag([1 x0])*Q)) > 1 + 10^(-6)
     x = fmincon(@(x)ObjFunction(x,Q),...
         x0,[],[],[],[],LB,UB,@(x)NonLinearCon(x,Q),options);
