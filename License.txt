@@ -1,0 +1,7 @@
+The license for this code is "Attribution 4.0 International (CC BY 4.0)" and it can be found in
+
+https://creativecommons.org/licenses/by/4.0/
+
+Appropriate citation is to be made for
+
+https://arxiv.org/abs/1806.08845
