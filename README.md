@@ -1,6 +1,6 @@
 This code generates filter-banks for partially designed multi-dimensional compactly supported Parseval framelets. The main function is funmin.m
 
-1. funmin: The supporting mathematical theory can be found in ...
+1. funmin: The supporting mathematical theory can be found in https://arxiv.org/abs/1806.08845
 
 2. Specifically, if A is an s1 x s2 x ... x sn multi-dimensional low-pass filter matrix with positive elements adding up to 1, we first vectorize the matrix so as to create a 1 x numel(A) vector 'a'.
 
